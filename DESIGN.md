@@ -58,3 +58,9 @@ I use three tiers because the business decision is not always binary:
 | Estimated cost | **$0.00** |
 
 Increasing `--runs` to 20 doubles confidence and still completes in under 90 seconds. The `--seed` flag pins all randomness for exact reproducibility across machines.
+
+## What I would build next
+
+1. **Adversarial/edge-case fixtures**: Current orders are all well-formed. Add orders with empty fields, extremely large quantities, unicode characters in addresses, unknown SKUs, and billing/shipping country mismatches to test robustness.
+
+2. **CI integration**: Run `eval.py` as a GitHub Action on every PR. Block merge if any variant gets DO NOT SHIP. This turns the harness into a real deploy gate rather than a one-shot script.
